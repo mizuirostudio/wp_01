@@ -1,0 +1,766 @@
+@charset 'UTF-8';
+
+/*
+Theme Name: mizuiro-theme
+*/
+
+/* 共通 */
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  position: relative;
+  overflow-x: clip;
+}
+
+:root {
+  --main-color: #54798c;
+  --red: #cf445e;
+  --text-color: #393939;
+  --bg-color: #e6f2f2;
+  --gray: #7b7b7b;
+  --blue: #7ab9d4;
+}
+
+body {
+  font-size: 0.75rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.9;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  overflow-x: clip;
+}
+
+* {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: 0px;
+}
+
+*:focus {
+  color: var(--red);
+}
+
+h1,
+h2 {
+  font-family: "Marcellus", "Noto Sans JP", sans-serif;
+  display: block;
+
+  span {
+    color: var(--gray);
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+}
+
+h2 {
+  color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-card {
+  display: block;
+}
+
+.btn-color,
+.wp-block-button__link {
+  color: #fff;
+  background-color: var(--main-color);
+  padding: 0.4rem 1.1rem;
+  width: fit-content;
+  border-radius: 50vh;
+
+  &:focus {
+    background-color: var(--red);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--red);
+      transition: 0.3s;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      background-color: var(--red);
+      transition: 0.3s;
+    }
+  }
+}
+
+.btn-outline {
+  color: var(--main-color);
+  border: solid 1px var(--main-color);
+  padding: 4px 14px;
+  width: fit-content;
+  border-radius: 50vh;
+
+  &:focus {
+    background-color: var(--red);
+    color: #fff;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: #fff;
+      background-color: var(--red);
+      transition: 0.3s;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      color: #fff;
+      background-color: var(--red);
+      transition: 0.3s;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tag {
+  margin-top: 4px;
+
+  ul {
+    display: flex;
+    margin-top: 4px;
+
+    li {
+      font-family: "Marcellus", "Noto Sans JP", sans-serif;
+      font-size: 0.65rem;
+      margin: 4px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background-color: var(--gray);
+      color: #fff;
+    }
+  }
+}
+
+/* トップページ */
+.top-wrapper {
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 400;
+
+    span {
+      margin-top: -12px;
+    }
+  }
+
+  section {
+    width: 95%;
+    max-width: 700px;
+    padding: 4.8rem 2.4rem;
+  }
+}
+
+/* ヘッダー */
+.header {
+  position: sticky;
+  width: 95%;
+  top: 0;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.logo-bg {
+  width: auto;
+  height: 48px;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: block;
+  }
+}
+
+.logo {
+  width: 48px;
+  height: auto;
+}
+
+.header-menu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: auto;
+}
+
+.header-menu {
+  display: flex;
+  padding: 8px 20px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  .menu-item {
+    display: inline-block;
+    position: relative;
+    font-family: "Marcellus";
+    letter-spacing: 0.1em;
+    padding: 8px 8px;
+
+    a {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: var(--text-color);
+        opacity: 0.5;
+        left: 0;
+        bottom: -4px;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform 0.3s;
+      }
+
+      @media (hover: hover) {
+        &:hover::after {
+          transform: scale(1, 1);
+        }
+      }
+
+      @media (hover: none) {
+        &:active::after {
+          transform: scale(1, 1);
+        }
+      }
+    }
+  }
+}
+
+#sp-menu-btn {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  height: 48px;
+  width: 48px;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#sp-menu-btn span {
+  content: "";
+  display: block;
+  height: 24px;
+  width: 1px;
+  border-radius: 1px;
+  background: var(--main-color);
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#sp-menu-btn span:nth-of-type(1) {
+  left: 18px;
+  height: 12px;
+}
+
+#sp-menu-btn span:nth-of-type(2) {
+  left: 24px;
+  height: 16px;
+}
+
+#sp-menu-btn span:nth-of-type(3) {
+  left: 30px;
+}
+
+#sp-menu-btn.open span {
+  background: #ffffff;
+  transform: rotate(24deg);
+}
+
+.sp-menu-wrapper.open {
+  left: 0;
+}
+.sp-menu-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 80;
+  background-color: var(--main-color);
+  transition: all 0.5s;
+}
+.sp-menu {
+  padding: 80px 10px 0;
+
+  .menu-item {
+    font-family: "Marcellus";
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 16px 10px 0;
+  }
+}
+
+/* ファーストビュー */
+.top-image {
+  height: 75svh;
+  width: 95%;
+  margin: 0 auto;
+  background-image: url(images/mizuiro-hero.webp);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+
+  .catchcopy {
+    width: 95%;
+    max-width: 700px;
+    position: absolute;
+  }
+
+  span {
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-size: clamp(75px, 10vw, 160px);
+    letter-spacing: -0.2rem;
+    line-height: 1.1;
+    color: transparent;
+    background: linear-gradient(135deg, #e79999 0%, #a8cfe4 50%, #608893 100%);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    word-wrap: break-word;
+    animation: bggradient 10s ease-in-out infinite;
+  }
+}
+
+@keyframes bggradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.scrolldown {
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+}
+
+.scrolldown span {
+  position: absolute;
+  left: 8px;
+  bottom: 10px;
+  color: var(--main-color);
+  font-family: "Marcellus", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--main-color);
+  animation: circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
+}
+
+@keyframes circlemove {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: -5px;
+  }
+}
+
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, var(--main-color));
+}
+
+#about {
+  h2 {
+    margin-top: 32px;
+  }
+
+  p {
+    display: inline-block;
+    margin-top: 24px;
+  }
+
+  .pr-points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    counter-reset: listnum;
+  }
+
+  .pr-point {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: 500;
+    width: 140px;
+    height: 220px;
+    padding: 16px;
+    position: relative;
+
+    &:nth-of-type(even) {
+      justify-content: flex-end;
+
+      @media screen and (max-width: 361px) {
+        justify-content: flex-start;
+      }
+    }
+
+    &::before {
+      display: block;
+      counter-increment: listnum;
+      content: counter(listnum, decimal-leading-zero);
+      font-size: 2rem;
+      position: absolute;
+      top: -16px;
+      left: 16px;
+      z-index: 1;
+      color: var(--main-color);
+      opacity: 0.3;
+      font-family: "Marcellus", sans-serif;
+      font-weight: 400;
+    }
+
+    @media screen and (min-width: 362px) {
+      &:nth-of-type(even)::before {
+        top: 6px;
+      }
+    }
+
+    span {
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+  }
+
+  .pr-icon {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .pr-icon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-position: center center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 48px;
+    width: 48px;
+    background-size: contain;
+    opacity: 0.9;
+  }
+
+  .icon-sp::before {
+    background-image: url(images/icon-sp.svg);
+  }
+
+  .icon-film::before {
+    background-image: url(images/icon-film.svg);
+  }
+
+  .icon-code::before {
+    background-image: url(images/icon-code.svg);
+  }
+
+  .icon-pen::before {
+    background-image: url(images/icon-pen.svg);
+  }
+}
+
+/* ワークス */
+#works {
+  background-color: #fff;
+  margin-top: 16px;
+  border-radius: 16px;
+  text-align: center;
+
+  > p {
+    text-align: left;
+    display: inline-block;
+    margin-top: 24px;
+  }
+}
+
+.works-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.works-slide {
+  margin: 8px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px var(--bg-color);
+  border-radius: 8px;
+  position: relative;
+
+  img {
+    margin-top: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.works-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: red;
+}
+
+.slick-prev {
+  left: 100px;
+}
+.slick-next {
+  right: 100px;
+}
+
+/* コンタクト */
+#contact {
+  text-align: center;
+
+  label {
+    display: inline-block;
+    margin-top: 32px;
+    color: var(--main-color);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  .wpcf7-submit {
+    margin-top: 24px;
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 4px 14px;
+    height: 2.2rem;
+    width: fit-content;
+    border-radius: 1.1rem;
+
+    &:focus {
+      background-color: var(--red);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--red);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .wpcf7-spinner {
+    display: none;
+  }
+
+  .wpcf7-response-output {
+    border: none;
+  }
+}
+
+.inputfield {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 4px;
+  min-height: 3rem;
+}
+
+/* フッター */
+footer {
+  margin-top: 16px;
+}
+
+#menu-footer-menu {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 8px;
+
+  .menu-item {
+    padding: 8px;
+  }
+}
+
+/* 下層ページ */
+.page-wrapper {
+  width: 95%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1.6rem;
+  font-size: 0.9rem;
+
+  h1,
+  h2 {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  h1 {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  h2 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    line-height: 1.6;
+  }
+
+  p {
+    margin-top: 8px;
+  }
+}
+
+#not-found {
+  text-align: center;
+
+  h1 {
+    color: var(--gray);
+  }
+
+  h2 {
+    font-family: "Marcellus", sans-serif;
+    color: var(--main-color);
+  }
+
+  .btn-color {
+    font-size: 0.75rem;
+    margin-top: 32px;
+  }
+}
+
+#page-article {
+  margin-top: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 2.4rem 3.2rem;
+
+  .wp-block-button__link {
+    font-size: 0.8rem;
+    margin-top: 16px;
+  }
+}
+
+.archive-item {
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 16px;
+}
