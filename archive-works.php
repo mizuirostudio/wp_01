@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php breadcrumb(); ?>
 <div class="wrapper page-wrapper">
   <h1><?php echo wp_get_document_title(); ?></h1>
   <ul>
@@ -28,5 +28,5 @@
     ?>
   </ul>
 </div>
-
+<?php breadcrumb(); ?>
 <?php get_footer(); ?>

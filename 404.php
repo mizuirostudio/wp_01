@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-
+<?php breadcrumb(); ?>
 <article id="not-found" class="wrapper page-wrapper">
-        <h1><?php echo wp_get_document_title(); ?></h1>
+    <h1><?php echo wp_get_document_title(); ?></h1>
 
     <section>
         <h2>404 Not Found</h2>
@@ -9,5 +9,5 @@
         <button type="button" onclick="location.href='<?php echo esc_url(home_url()); ?>'" class="btn-color">トップに戻る</button>
     </section>
 </article>
-
+<?php breadcrumb(); ?>
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php breadcrumb(); ?>
 <article id="page-article" class="wrapper page-wrapper">
   <?php if (have_posts()) : the_post(); ?>
     <h1><?php echo wp_get_document_title(); ?></h1>
@@ -12,5 +12,5 @@
     <?php the_content(); ?>
   <?php endif; ?>
 </article>
-
+<?php breadcrumb(); ?>
 <?php get_footer(); ?>

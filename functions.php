@@ -107,3 +107,89 @@ function add_taxonomies()
   );
 }
 add_action('init', 'add_taxonomies', 0);
+
+function breadcrumb()
+{
+  $wp_obj = get_queried_object();
+
+  echo
+  '<div class="p-breadcrumb">' .
+    '<ol class="p-breadcrumb__lists" itemscope itemtype="http://schema.org/BreadcrumbList">' .
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+    '<a itemprop="item" href="' . home_url() . '">' .
+    '<span itemprop="name">TOP</span>' .
+    '</a>' .
+    '<meta itemprop="position" content="1">' .
+    '</li>';
+
+  if (is_page()) {
+    echo
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($_SERVER["REQUEST_URI"]) . '">' .
+      '<span itemprop="name">' . single_post_title('', false) . '</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="2">' .
+      '</li>';
+  }
+  if (is_post_type_archive()) {
+    echo
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($wp_obj->name) . '">' .
+      '<span itemprop="name">' . $wp_obj->label . '</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="2">' .
+      '</li>';
+  }
+
+  if (is_tax()) {
+    $post_slug = get_post_type();
+    $post_label = get_post_type_object($post_slug)->label;
+    echo
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($post_slug) . '">' .
+      '<span itemprop="name">' . $post_label . '</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="2">' .
+      '</li>' .
+      '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($post_slug . '/' . $wp_obj->slug) . '">' .
+      '<span itemprop="name">「' . $wp_obj->name . '」カテゴリー一覧</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="3">' .
+      '</li>';
+  }
+
+  if (is_singular() && !is_page()) {
+    $post_slug = get_post_type();
+    $post_label = get_post_type_object($post_slug)->label;
+    $post_id = $wp_obj->ID;
+    $post_title = $wp_obj->post_title;
+    echo
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($post_slug) . '">' .
+      '<span itemprop="name">' . $post_label . '</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="2">' .
+      '</li>' .
+      '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($post_slug . '/' . $post_id) . '">' .
+      '<span itemprop="name">' . $post_title . '</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="3">' .
+      '</li>';
+  }
+
+  if (is_404()) {
+    echo
+    '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
+      '<a itemprop="item" href="' . home_url($_SERVER["REQUEST_URI"]) . '">' .
+      '<span itemprop="name">404 Not Found</span>' .
+      '</a>' .
+      '<meta itemprop="position" content="2">' .
+      '</li>';
+  }
+
+  echo
+  '</ol>' .
+    '</div>';
+}

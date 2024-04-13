@@ -692,6 +692,24 @@ footer {
   }
 }
 
+.p-breadcrumb {
+  margin-top: 2rem;
+}
+
+.p-breadcrumb__lists {
+  display: flex;
+  width: 95%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+.p-breadcrumb__item:not(:last-of-type)::after {
+  content: "›";
+  margin: 0 0.6em;
+  color: var(--main-color);
+}
+
 /* 下層ページ */
 .page-wrapper {
   width: 95%;
