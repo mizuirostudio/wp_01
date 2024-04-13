@@ -12,7 +12,7 @@
         <li class="archive-item">
           <a href="<?php the_permalink(); ?>" class="link-card">
             <?php the_post_thumbnail('large'); ?>
-            <?php the_time('Y/m/d'); ?>
+            <?php the_time('Y-m-d'); ?>
             <div class="works-title"><?php the_title(); ?></div>
             <?php the_excerpt(); ?>
           </a>
