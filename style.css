@@ -497,7 +497,7 @@ img {
     &:nth-of-type(even) {
       justify-content: flex-end;
 
-      @media screen and (max-width: 361px) {
+      @media screen and (max-width: 393px) {
         justify-content: flex-start;
       }
     }
@@ -517,7 +517,7 @@ img {
       font-weight: 400;
     }
 
-    @media screen and (min-width: 362px) {
+    @media screen and (min-width: 394px) {
       &:nth-of-type(even)::before {
         top: 6px;
       }
