@@ -72,10 +72,6 @@ li {
   flex-direction: column;
 }
 
-.link-card {
-  display: block;
-}
-
 .btn-color,
 .wp-block-button__link {
   color: #fff;
@@ -140,6 +136,7 @@ img {
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 4px;
 
     li {
@@ -597,9 +594,13 @@ img {
   box-shadow: 1px 1px 10px var(--bg-color);
   border-radius: 8px;
   position: relative;
+}
+
+.link-card {
+  display: block;
 
   img {
-    margin-top: 8px;
+    margin-top: 1rem;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -770,6 +771,11 @@ footer {
   background-color: #fff;
   padding: 2.4rem 3.2rem;
 
+  h1,
+  p {
+    margin-top: 1rem;
+  }
+
   .wp-block-button__link {
     font-size: 0.8rem;
     margin-top: 16px;
@@ -781,4 +787,10 @@ footer {
   padding: 2rem;
   margin-top: 1rem;
   border-radius: 16px;
+}
+
+.the-time {
+  font-size: 0.75rem;
+  text-align: right;
+  margin-top: 0.5rem;
 }

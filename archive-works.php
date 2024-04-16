@@ -10,9 +10,10 @@
     $posts = get_posts($args);
     if ($posts) : foreach ($posts as $post) : setup_postdata($post); ?>
         <li class="archive-item">
+          <div class="tag"><?php echo get_the_term_list($post->ID, 'works_tag', '<ul><li>', '</li><li>', '</li></ul>'); ?></div>
           <a href="<?php the_permalink(); ?>" class="link-card">
             <?php the_post_thumbnail('large'); ?>
-            <?php the_time('Y-m-d'); ?>
+            <div class="the-time"><?php the_time('Y.m.d'); ?></div>
             <div class="works-title"><?php the_title(); ?></div>
             <?php the_excerpt(); ?>
           </a>

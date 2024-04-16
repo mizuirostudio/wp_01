@@ -90,7 +90,7 @@ add_action('init', 'add_post_type');
 function add_taxonomies()
 {
   register_taxonomy(
-    'works-tag',
+    'works_tag',
     array('works'),
     array(
       'label' => '制作実績タグ',

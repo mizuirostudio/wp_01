@@ -18,7 +18,7 @@
       <p>
         みずいろスタジオは、フリーランスで活動している個人のWeb制作事務所です。
         <wbr>
-        デザインからサイト構築（コーディング）まで、Webサイト制作を支援しています。強みは、Webマーケティング会社での経験を活かした、コンバージョンにつながるサイト設計です。
+        デザインからサイト構築（コーディング）まで、Webサイト制作を支援しています。Webマーケティング会社での経験を活かした、コンバージョンにつながるサイト設計が強みです。
       </p>
       <p>
         サイトは作って終わり、ではなく、そこがスタート。
@@ -67,14 +67,13 @@
         <?php if ($works_posts) : foreach ($works_posts as $post) : setup_postdata($post);
         ?>
             <li class="works-slide">
-              <div class="tag"><?php echo get_the_term_list($post->ID, 'works-tag', '<ul><li>', '</li><li>', '</li></ul>'); ?></div>
+              <div class="tag"><?php echo get_the_term_list($post->ID, 'works_tag', '<ul><li>', '</li><li>', '</li></ul>'); ?></div>
               <a href="<?php echo esc_url(get_the_permalink()); ?>" class="link-card">
                 <figure>
                   <?php
                   echo get_the_post_thumbnail($post->ID, 'large');
                   ?>
                 </figure>
-
 
                 <div class="works-title"><?php the_title(); ?></div>
                 <?php the_excerpt(); ?>

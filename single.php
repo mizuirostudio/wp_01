@@ -7,7 +7,7 @@
         <?php
         echo get_the_post_thumbnail($post->ID, 'large');
         ?>
-        <div class="tag"><?php echo get_the_term_list($post->ID, 'works-tag', '<ul><li>', '</li><li>', '</li></ul>'); ?></div>
+        <div class="tag"><?php echo get_the_term_list($post->ID, 'works_tag', '<ul><li>', '</li><li>', '</li></ul>'); ?></div>
 
         <?php the_content(); ?>
     <?php endif; ?>

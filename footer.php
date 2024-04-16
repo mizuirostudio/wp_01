@@ -27,7 +27,7 @@
       arrows: true,
       dots: true,
       centerMode: true,
-      centerPadding: '8%'
+      centerPadding: '5%'
     });
   });
 </script>
