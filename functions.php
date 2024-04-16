@@ -153,7 +153,7 @@ function breadcrumb()
       '</li>' .
       '<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" class="p-breadcrumb__item">' .
       '<a itemprop="item" href="' . home_url($post_slug . '/' . $wp_obj->slug) . '">' .
-      '<span itemprop="name">「' . $wp_obj->name . '」カテゴリー一覧</span>' .
+      '<span itemprop="name">「' . $wp_obj->name . '」一覧</span>' .
       '</a>' .
       '<meta itemprop="position" content="3">' .
       '</li>';
