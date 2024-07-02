@@ -364,15 +364,14 @@ img {
   place-items: center;
 
   .catchcopy {
-    width: 95%;
-    max-width: 700px;
+    max-width: 1000px;
     position: absolute;
   }
 
   span {
     font-family: "Baskervville", serif;
     font-weight: 400;
-    font-size: clamp(75px, 10vw, 160px);
+    font-size: clamp(70px, 9vw, 120px);
     letter-spacing: -0.2rem;
     line-height: 1.1;
     color: transparent;
@@ -516,7 +515,7 @@ img {
 
     @media screen and (min-width: 394px) {
       &:nth-of-type(even)::before {
-        top: 6px;
+        top: 26px;
       }
     }
 
@@ -548,20 +547,20 @@ img {
     opacity: 0.9;
   }
 
+  .icon-heart::before {
+    background-image: url(images/icon-heart.svg);
+  }
+
+  .icon-ok::before {
+    background-image: url(images/icon-ok.svg);
+  }
+
   .icon-sp::before {
     background-image: url(images/icon-sp.svg);
   }
 
   .icon-film::before {
     background-image: url(images/icon-film.svg);
-  }
-
-  .icon-code::before {
-    background-image: url(images/icon-code.svg);
-  }
-
-  .icon-pen::before {
-    background-image: url(images/icon-pen.svg);
   }
 }
 

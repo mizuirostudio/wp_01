@@ -3,7 +3,7 @@
 <main>
   <div class="top-image">
     <div class="catchcopy">
-      <span>Web Design & Coding</span>
+      <span>Design Like Water</span>
     </div>
     <div class="scrolldown"><span>Scroll</span></div>
   </div>
@@ -16,31 +16,29 @@
         </span>
       </h2>
       <p>
-        みずいろスタジオは、フリーランスで活動している個人のWeb制作事務所です。
+        みずいろスタジオは、個人のデザイン事務所です。
         <wbr>
-        デザインからサイト構築（コーディング）まで、Webサイト制作を支援しています。Webマーケティング会社での経験を活かした、コンバージョンにつながるサイト設計が強みです。
+        LPやサイトなどのWebデザイン、バナーやサムネイル、印刷物などのグラフィックデザインを主に担当しています。
       </p>
       <p>
-        サイトは作って終わり、ではなく、そこがスタート。
-        <wbr>
-        お客様の新たなスタートにつながるサイトで、事業に貢献します！
+        デザインの力で、お客様の事業に貢献できたらと考えています。
       </p>
       <ol class="pr-points">
+      <li class="pr-point">
+          <div class="pr-icon icon-heart"></div>
+          <span>行動につながるビジュアル制作</span>
+        </li>
+        <li class="pr-point">
+          <div class="pr-icon icon-ok"></div>
+          <span>わかりやすく使いやすいサイト設計</span>
+        </li>
         <li class="pr-point">
           <div class="pr-icon icon-sp"></div>
           <span>様々なデバイスに対応するレスポンシブデザイン</span>
         </li>
         <li class="pr-point">
           <div class="pr-icon icon-film"></div>
-          <span>サイトの印象を高めるCSS・Javascriptアニメーション</span>
-        </li>
-        <li class="pr-point">
-          <div class="pr-icon icon-code"></div>
-          <span>アクセシビリティに配慮したマークアップ</span>
-        </li>
-        <li class="pr-point">
-          <div class="pr-icon icon-pen"></div>
-          <span>Wordpress等のCMSを導入した更新しやすいサイト</span>
+          <span>サイトの印象を高めるアニメーション</span>
         </li>
       </ol>
     </section>
@@ -53,7 +51,7 @@
         </span>
       </h2>
       <p>
-        みずいろスタジオのこれまでの制作物を一部紹介しています。それぞれのページでは、デザインやコーディングのときに考えたこと、使用したツールや参考書籍等を記載しています。
+        みずいろスタジオのこれまでの制作物を一部紹介しています。それぞれのページでは、デザインやサイト制作のときに考えたこと、使用したツールや参考書籍等を記載しています。
       </p>
       <ul class="works-slider">
         <?php
